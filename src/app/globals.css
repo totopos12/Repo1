@@ -1,0 +1,33 @@
+.Fisrtclass{ 
+  background:linear-gradient(to right,#FFFFFF, #29A3D3,#00425C);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  display: flex;
+  color:black;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10%;
+}
+
+p{
+  margin-left: 5%;
+}
+
+body {
+  background: linear-gradient(to bottom right, rgb(99, 164, 255), white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+}
+
+footer{
+  background-color: #FDBE34;
+  width: 100%;
+  font-size: x-large;
+  position: fixed;
+  bottom: 0;
+  color: rgb(0, 0, 0);
+  align-content: center;
+  text-align: center;
+}
