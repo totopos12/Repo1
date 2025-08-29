@@ -1,0 +1,21 @@
+.fixed-buttons {
+  position: fixed;
+  bottom: 10%;
+  width: 100%;           /* Ocupa todo el ancho de la pantalla */
+  display: flex;
+  justify-content: center;
+  gap:10%;              /* Espacio proporcional al ancho de pantalla */
+  flex-wrap: wrap;       /* Permite que se acomoden en más de una línea si no caben */
+}
+
+.button1 {
+  background: linear-gradient(#0B409C, #8eb5ff);
+  color: rgb(255, 255, 255);
+  font-size: clamp(10px, 2vw, 16px); /* Ajusta tamaño de texto según pantalla */
+  padding: 0.5em 1em;                /* Escala con font-size */
+  border-radius: 6px;
+  flex: auto;                     /* Que crezcan o se encojan según espacio */
+  max-width: 300px;                   /* Límite máximo */
+  min-width: 30px;                    /* Límite mínimo para que sigan legibles */
+  text-align: center;
+}

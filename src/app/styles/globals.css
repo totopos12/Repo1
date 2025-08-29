@@ -1,5 +1,5 @@
 .Firstclass{ 
-  background:linear-gradient(to right,#FFFFFF, #29A3D3,#00425C);
+  background:linear-gradient(to right,#FFFFFF, #004faa,#fca400);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: x-large;
   display: flex;
@@ -15,6 +15,7 @@ p{
 
 body {
   background: linear-gradient(to bottom right, rgb(99, 164, 255), white);
+  background-image:url('../assets/img/Modern.png');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
