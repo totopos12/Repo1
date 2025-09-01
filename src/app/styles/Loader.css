@@ -6,8 +6,8 @@ animation: infinite ;
 }
 
 .rotate-center {
-	-webkit-animation: rotate-center 1s linear infinite ;
-	        animation: rotate-center .8s linear infinite ;
+	-webkit-animation: rotate-center var(--animation-duration) linear infinite ;
+	        animation: rotate-center var(--animation-duration) linear infinite;
 }
 
 @-webkit-keyframes rotate-center {

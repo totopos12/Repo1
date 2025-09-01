@@ -4,20 +4,36 @@ import Button from '@mui/material/Button';
 import "../../styles/button.css";
 
 export function Button1() {
-  return <Button onClick={melapelas} variant="contained" className="button1">Level 1</Button>;
+  return <Button onClick={Level1} variant="contained" className="button1">Level 1</Button>;
   };
 
 export function Button2(){
-    return <Button variant='contained' className="button1">Level 2</Button>;
+    return <Button onClick={Level2} variant='contained' className="button1">Level 2</Button>;
 }
 
 
 export function Button3(){
-    return <Button variant='contained' className="button1">Level 3</Button>;
+    return <Button onClick={Level3} variant='contained' className="button1">Level 3</Button>;
+}
+
+export function TurnOff(){
+  return <Button onClick={Turnoff} variant='contained' className='button1'>Turn Off</Button>
 }
  
-function melapelas() {
-  console.log('el mono me la pela'); 
+function Level1(): void{
+  document.documentElement.style.setProperty('--animation-duration', '.8s');
+}
+
+function Level2(): void{
+  document.documentElement.style.setProperty('--animation-duration', '.5s');
+}
+
+function Level3(): void{ 
+  document.documentElement.style.setProperty('--animation-duration','.3s');
+}
+
+function Turnoff(): void{
+  document.documentElement.style.setProperty('--animation-duration', '');
 }
 
 

@@ -5,7 +5,7 @@ import Fan_load from "./../assets/img/Fan_load.png";
 export function LoaderFan() {
     return(
         <div className='fan-container' >
-            <img /*className='rotate-center'*/ src={Fan_load.src} height={500} alt='Loading...'></img>
+            <img className='rotate-center' src={Fan_load.src} height={500} alt='Loading...'></img>
         </div> 
         );
     }

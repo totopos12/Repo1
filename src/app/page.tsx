@@ -1,5 +1,5 @@
 import "./styles/globals.css";
-import Button1, { Button3, Button2 } from "./Components/Buttons/button";
+import Button1, { Button3, Button2, TurnOff } from "./Components/Buttons/button";
 import { LoaderFan } from "./Components/Loader_fan";
 import Fan_Logo from "./assets/img/Fan_Logo.png";
 import "./styles/button.css";
@@ -16,6 +16,7 @@ return(
     <Button1></Button1>
     <Button2></Button2>
     <Button3></Button3>
+    <TurnOff></TurnOff>
     </div>  
   <footer>CETYS</footer>
   
