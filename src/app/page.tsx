@@ -1,5 +1,5 @@
 import "./styles/globals.css";
-import Button1, { Button3, Button2, TurnOff } from "./Components/Buttons/button";
+import Button1, { Button3, Button2, TurnOff, SelectTemp } from "./Components/Buttons/button";
 import { LoaderFan } from "./Components/Loader_fan";
 import Fan_Logo from "./assets/img/Fan_Logo.png";
 import "./styles/button.css";
@@ -10,6 +10,7 @@ return(
   <header className="Firstclass">
     <img src={Fan_Logo.src} height={100} alt="img1"/>
     FAN CONTROLS
+    <SelectTemp></SelectTemp>
     </header>
     <LoaderFan></LoaderFan>
   <div className="fixed-buttons">
@@ -17,7 +18,7 @@ return(
     <Button2></Button2>
     <Button3></Button3>
     <TurnOff></TurnOff>
-    </div>  
+    </div>
   <footer>CETYS</footer>
   
   </body>

@@ -15,7 +15,12 @@
   padding: 0.5em 1em;                /* Escala con font-size */
   border-radius: 6px;
   flex: auto;                     /* Que crezcan o se encojan según espacio */
-  max-width: 300px;                   /* Límite máximo */
+  max-width: 250px;                   /* Límite máximo */
   min-width: 30px;                    /* Límite mínimo para que sigan legibles */
   text-align: center;
+}
+
+.select-temp{
+  background: linear-gradient(#0B409C, #8eb5ff);
+  width: 10%;
 }
