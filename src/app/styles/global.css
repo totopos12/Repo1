@@ -28,3 +28,9 @@ footer{
   align-content: center;
   text-align: center;
 }
+
+p{
+  font-size: large;
+  color: black;
+  position: relative;
+}
