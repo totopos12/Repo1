@@ -30,7 +30,7 @@ return(
     <AutomaticButton></AutomaticButton>
     <p>
   Current Temperature:{" "}
-  {temperature !== null ? `${temperature} °C` : "Cargando..."}
+  {temperature !== null ? `${temperature} °C` : "Loading..."}
 </p>
     </header>
     <LoaderFan></LoaderFan>
