@@ -41,7 +41,7 @@ export function TurnOff() {
 export function AutomaticButton({ temperature }: { temperature: number }) {
   return (
     <Button
-      onClick={() => Automatic(temperature)}
+      onClick={() => Automatic()}
       variant="contained"
       className="button1"
     >
