@@ -77,12 +77,6 @@ const handleBoth = async (pin: number, pin2: number) => {
 };
 
   
-const handleTurnOff = async () => {
-  await controlPin("off", 12);
-  await controlPin("off", 13);
-  Turnoff();
-};
-
 // Animaciones
 function Level1() {
   document.documentElement.style.setProperty('--animation-duration', '.8s');
@@ -97,27 +91,44 @@ function Turnoff() {
   document.documentElement.style.setProperty('--animation-duration', '');
 }
 
-function Automatic() {
-  setInterval(() => {
-    getTemperature().then((value) => {
-      if (value > 20 && value < 23) {
-        // Nivel 1: entre 20 y 23
-        Level1();
-        handleLevel1();
-      } else if (value >= 23 && value < 27) {
-        // Nivel 2: entre 23 y 27
-        Level2();
-        handleLevel2();
-      } else if (value >= 27) {
-        // Nivel 3: mayor o igual a 27
-        Level3();
-        handleBoth(12, 13);
-      }
+let isAutomatic = false; // bandera de modo automático
+let automaticInterval: NodeJS.Timeout | null = null;
 
-      console.log("Automatic Mode - Temperature:", value);
-    });
-  }, 2000); // cada 2000 ms = 2 segundos
+function Automatic() {
+  // activa el modo automático cada 2 segundos
+  isAutomatic = true;
+  automaticInterval = setInterval(async () => {
+    const value = await getTemperature();
+    if (value > 20 && value < 23) {
+      Level1();
+      handleLevel1();
+    } else if (value >= 23 && value < 27) {
+      Level2();
+      handleLevel2();
+    } else if (value >= 27) {
+      Level3();
+      handleBoth(12, 13);
+    }
+    console.log("Automatic Mode - Temperature:", value);
+  }, 2000);
 }
+
+const handleTurnOff = async () => {
+  // apaga los pines
+  await controlPin("off", 12);
+  await controlPin("off", 13);
+
+  // desactiva automático si estaba corriendo
+  if (automaticInterval) {
+    clearInterval(automaticInterval);
+    automaticInterval = null;
+  }
+  isAutomatic = false;
+
+  // lógica adicional de apagado
+  Turnoff();
+  console.log("Modo automático desactivado y pines apagados");
+};
 
 
 
