@@ -38,7 +38,7 @@ export function TurnOff() {
   );
 }
 
-export function AutomaticButton({ temperature }: { temperature: number }) {
+export function AutomaticButton({}: { temperature: number }) {
   return (
     <Button
       onClick={() => Automatic()}
@@ -99,24 +99,27 @@ function Turnoff() {
 }
 
 function Automatic() {
-  getTemperature().then((value) => {
-    if (value > 20 && value < 23) {
-      // Nivel 1: entre 20 y 23
-      Level1();
-      handleLevel1();
-    } else if (value >= 23 && value < 27) {
-      // Nivel 2: entre 23 y 27
-      Level2();
-      handleLevel2();
-    } else if (value >= 27) {
-      // Nivel 3: mayor o igual a 27
-      Level3();
-      handleBoth(12, 13);
-    }
+  setInterval(() => {
+    getTemperature().then((value) => {
+      if (value > 20 && value < 23) {
+        // Nivel 1: entre 20 y 23
+        Level1();
+        handleLevel1();
+      } else if (value >= 23 && value < 27) {
+        // Nivel 2: entre 23 y 27
+        Level2();
+        handleLevel2();
+      } else if (value >= 27) {
+        // Nivel 3: mayor o igual a 27
+        Level3();
+        handleBoth(12, 13);
+      }
 
-    console.log("Automatic Mode - Temperature:", value);
-  });
+      console.log("Automatic Mode - Temperature:", value);
+    });
+  }, 2000); // cada 2000 ms = 2 segundos
 }
+
 
 
 export default Button1;
