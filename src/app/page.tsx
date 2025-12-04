@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import "./styles/global.css";
-import { Button1, Button3, Button2, TurnOff, AutomaticButton } from "./Components/Buttons/button";
+import { Button1, Button3, Button2, TurnOffButton, AutomaticButton } from "./Components/Buttons/button";
 import { LoaderFan } from "./Components/Loader_fan";
 import Fan_Logo from "./assets/img/Fan_Logo.png";
 import { getTemperature }  from "./Services/Temperature";
@@ -27,7 +27,7 @@ return(
   <header className="Firstclass">
     <img src={Fan_Logo.src} height={100} alt="img1"/>
     FAN CONTROLS
-    <AutomaticButton temperature={0}></AutomaticButton>
+    <AutomaticButton></AutomaticButton>
     <p>
   Current Temperature:{" "}
   {temperature !== null ? `${temperature} °C` : "Loading..."}
@@ -38,7 +38,7 @@ return(
     <Button1></Button1>
     <Button2></Button2>
     <Button3></Button3>
-    <TurnOff></TurnOff>
+    <TurnOffButton></TurnOffButton>
     </div>
   <footer>CETYS</footer>
   
