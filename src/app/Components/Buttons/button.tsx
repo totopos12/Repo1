@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
 import Button from '@mui/material/Button';
-// @ts-ignore
 import '../../styles/button.css';
 import { controlPin } from '../../Services/Activate';
 import { getTemperature } from '@/app/Services/Temperature';
